@@ -1,0 +1,39 @@
+<div class="container-fluid " style="height: 100vh;">
+    <div class="container mt-5">
+        <div class="row justify-content-center ">
+            <div id="main" class="col-md-5 shadow p-5 py-3 border border-secondary ">
+
+                <h1 class="mb-4" style="color:rgb(112, 112, 112); font-size: 2.6rem;">Currency Converter</h1>
+
+
+                <input [(ngModel)]="inAmount" (keydown.enter)="converter()"
+                    class="form-control form-control-lg mb-4 shadow-sm border-primary" type=""
+                    placeholder="Enter the amount" aria-label=".form-control-lg example">
+
+                <div class="d-flex justify-content-between">
+                    <div class="mb-3">
+                        <label class="form-labe"  id="from">From</label>
+                        <select [(ngModel)]="from"  id="from" class="form-select mb-3 shadow-sm border-dark"
+                            aria-label="size 3 select example" style="overflow: scroll;">
+                            
+                            <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-labe" id="to" >To</label>
+                        <select [(ngModel)]="to"   id="to" class="form-select mb-3 shadow-sm border-dark"
+                            aria-label=".form-select-lg example">
+
+                            <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+
+                        </select>
+                    </div>
+
+                </div>
+                <h1 class="text-center">{{result}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
